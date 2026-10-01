@@ -1,0 +1,10 @@
+{
+  "name": "hermes-zalo-ca-nhan",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Cầu nối Node cho plugin Hermes Zalo cá nhân",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "dependencies": { "zca-js": "2.1.2" },
+  "scripts": { "test": "node --test tests/node/shape.test.mjs" }
+}

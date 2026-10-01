@@ -1,0 +1,19 @@
+node_modules/
+__pycache__/
+*.py[cod]
+
+# Phiên đăng nhập, QR, trạng thái và log: tuyệt đối không đưa lên GitHub
+session.json
+credentials.json
+qr-dang-nhap.png
+*.sqlite3
+*.sqlite3-*
+*.db
+*.log
+.env
+.env.*
+
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

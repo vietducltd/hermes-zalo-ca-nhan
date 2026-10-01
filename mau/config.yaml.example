@@ -1,0 +1,68 @@
+# Ghép các khoá dưới đây vào config.yaml của profile bot Zalo.
+# Giữ nguyên những khoá khác đã có sẵn trong file (ví dụ khối model).
+
+# Tắt mọi công cụ: bot chỉ đọc tin và trả lời, không lướt web, không đụng file trên máy.
+agent:
+  disabled_toolsets:
+    - web
+    - search
+    - vision
+    - terminal
+    - file
+    - browser
+    - cronjob
+    - skills
+    - memory
+    - delegation
+
+memory:
+  memory_enabled: false
+  user_profile_enabled: false
+
+platforms:
+  zalo_ca_nhan:
+    enabled: true
+    # Nơi Hermes gửi thông báo nội bộ. Điền User ID của người quản trị, không điền nhóm khách.
+    home_channel:
+      platform: zalo_ca_nhan
+      chat_id: "USER_ID_NGUOI_QUAN_TRI"
+      name: "Quản trị Zalo"
+    extra:
+      # User ID được bot trả lời tin nhắn riêng. Để rỗng là không trả lời ai.
+      # Luôn đặt ID trong ngoặc kép.
+      allowed_users: []
+      # - "1234567890123456789"
+
+      # Group ID được bot trả lời. Để rỗng là không trả lời nhóm nào.
+      allowed_groups: {}
+      # allowed_groups:
+      #   "9876543210987654321":
+      #     enabled: true
+      #     require_mention: true
+
+      # Trong nhóm, chỉ trả lời khi được @nhắc tên.
+      require_mention: true
+      # Số giây bot tạm dừng sau khi chuyển cho người thật (86400 = 24 giờ).
+      handoff_seconds: 86400
+      # Bạn gõ tay trả lời khách trong tin nhắn riêng thì bot tạm dừng với khách đó.
+      owner_takeover: true
+
+      # Tuỳ chọn: thêm cụm từ khiến bot chuyển người thật.
+      # handoff_keywords:
+      #   - "bảo hành"
+      #   - "đổi trả"
+
+      # Tuỳ chọn: đổi các câu trả lời cố định cho hợp giọng thương hiệu.
+      # handoff_message: "Dạ em đã báo bạn phụ trách, anh/chị chờ em một chút nhé."
+      # media_message: "Dạ em đã nhận được, em chuyển bạn phụ trách xem giúp anh/chị ạ."
+      # resume_message: "Dạ em quay lại rồi ạ, anh/chị cần em hỗ trợ gì thêm không?"
+
+platform_toolsets:
+  zalo_ca_nhan: []
+
+plugins:
+  enabled:
+    - zalo-ca-nhan
+  entries:
+    zalo-ca-nhan:
+      allow_tool_override: false

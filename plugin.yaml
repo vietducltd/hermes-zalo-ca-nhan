@@ -1,0 +1,7 @@
+name: zalo-ca-nhan
+label: Zalo cá nhân
+kind: platform
+version: 1.0.0
+description: Nền tảng Hermes cho một tài khoản Zalo cá nhân đăng nhập bằng QR, chạy hoàn toàn trên máy.
+author: Vietducltd
+license: MIT
